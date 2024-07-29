@@ -63,7 +63,7 @@ body {
 /* Main section styles */
 main {
   padding: 20px;
-  width: 100%; /* Full width for responsiveness */
+  width: 90%; /* Adjusted width for responsiveness */
   max-width: 1200px;
   box-sizing: border-box;
 }
@@ -77,6 +77,8 @@ table {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: scale(1); /* Default scale */
+  transform-origin: top left; /* Scale from the top left */
 }
 
 /* Table header and cell styles */
@@ -136,44 +138,12 @@ h2 {
   }
 
   table {
-    font-size: 0.8rem;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-size: 0.5rem;
+    transform: scale(0.7); /* Scale table to fit smaller screens */
+    transform-origin: top left; /* Ensure scaling happens from the top left */
   }
 
   th, td {
     padding: 8px;
-    word-wrap: break-word; /* Ensure content wraps */
-  }
-
-  /* Adjust table for small screens */
-  table, thead, tbody, th, td, tr {
-    display: block; /* Makes table layout block for mobile */
-  }
-
-  thead {
-    display: none; /* Hide table headers on small screens */
-  }
-
-  tr {
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  td {
-    position: relative;
-    padding-left: 50%; /* Space for labels */
-    text-align: left;
-  }
-
-  td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 0;
-    width: 45%;
-    padding-left: 10px;
-    font-weight: bold;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #ddd;
   }
 }
