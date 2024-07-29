@@ -138,8 +138,8 @@ h2 {
   }
 
   table {
-    font-size: 0.5rem;
-    transform: scale(0.7); /* Scale table to fit smaller screens */
+    font-size: 0.65rem;
+    transform: scale(0.88); /* Scale table to fit smaller screens */
     transform-origin: top left; /* Ensure scaling happens from the top left */
   }
 
