@@ -51,7 +51,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="/logo512.png" alt="FPL Champions Logo" className="App-logo" />
+        <img src={`${process.env.PUBLIC_URL}/logo512.png`} alt="FPL Champions Logo" className="App-logo" />
       </header>
       <main>
         <section>

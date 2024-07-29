@@ -1,6 +1,6 @@
 /* Base styles */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Lato', sans-serif;
   background-color: #f5f5f5;
   color: #333;
   margin: 0;
@@ -27,7 +27,7 @@ body {
 }
 
 .App-logo {
-  height: 80px;
+  height: 160px;
   width: auto;
 }
 
