@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
 import './App.css';
 import Toast from './Toast'; // Import the Toast component
-import AutobuildTeam from './AutobuildTeam';
+import TeamTemplates from './TeamTemplates';
 import axios from 'axios';
 
 const leagueId = '26320'; // Replace with your actual league ID
@@ -274,13 +274,13 @@ function App() {
         <nav className="Navbar">
           <Link to="/">Home</Link>
           <Link to="/tools">Tools</Link>
-          <Link to="/autobuild-team">Autobuild Team</Link>
+          <Link to="/templates">Team Templates</Link>
         </nav>
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/tools" element={<Tools />} />
-            <Route path="/autobuild-team" element={<AutobuildTeam />} />
+            <Route path="/templates" element={<TeamTemplates />} />
           </Routes>
         </main>
         <footer className="Footer">

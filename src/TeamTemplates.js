@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const AutobuildTeam = () => {
+const TeamTemplates = () => {
   const [playerDetails, setPlayerDetails] = useState({ template1: [], template2: [] });
   const [sortConfig, setSortConfig] = useState({ key: 'web_name', direction: 'ascending' });
 
@@ -22,6 +22,12 @@ const AutobuildTeam = () => {
     'Alexander-Arnold', 'Mykolenko', 'Sanchez', 'Bentley', 'Gabriel',
     'Andersen', 'Joao Pedro', 'Hardwood-Bellis', 'Isak', 'Haaland',
     'Johnson', 'Hudson-Odoi', 'Gordon', 'Eze', 'Saka'
+  ];
+
+  const template4Names = [
+    'Shaw', 'Gvardiol', 'Munoz', 'Turner', 'Verbruggen',
+    'Konsa', 'Palmer', 'Hardwood-Bellis', 'Isak', 'Watkins',
+    'Gibbs-White', 'Fernandes', 'Salah', 'Eze', 'Fraser'
   ];
 
   // Fetch player details from the API
@@ -72,6 +78,7 @@ const AutobuildTeam = () => {
           template1: getPlayerDetails(template1Names),
           template2: getPlayerDetails(template2Names),
           template3: getPlayerDetails(template3Names),
+          template4: getPlayerDetails(template4Names),
         });
       } catch (error) {
         console.error("Error fetching player details:", error);
@@ -101,6 +108,18 @@ const AutobuildTeam = () => {
             selected_by_percent: 'N/A' 
           })),
           template3: template3Names.map(name => ({
+            web_name: name, 
+            total_points: 'N/A', 
+            now_cost: 'N/A', 
+            pointsPerCost: 'N/A', 
+            goals_scored: 'N/A', 
+            assists: 'N/A', 
+            clean_sheets: 'N/A', 
+            goals_conceded: 'N/A', 
+            bonus: 'N/A', 
+            selected_by_percent: 'N/A' 
+          })),
+          template4: template4Names.map(name => ({
             web_name: name, 
             total_points: 'N/A', 
             now_cost: 'N/A', 
@@ -258,8 +277,45 @@ const AutobuildTeam = () => {
           ))}
         </tbody>
       </table>
+
+      <div style={{ margin: '40px 0' }} />
+
+      {/* Table 4: Template Name: Palmer + Salah */}
+      <h2>Template Name: Palmer + Salah</h2>
+      <table>
+        <thead>
+          <tr>
+            <th onClick={() => requestSort('web_name')} className={getClassNamesFor('web_name')}>Players</th>
+            <th onClick={() => requestSort('total_points')} className={getClassNamesFor('total_points')}>Points</th>
+            <th onClick={() => requestSort('now_cost')} className={getClassNamesFor('now_cost')}>Cost</th>
+            <th onClick={() => requestSort('pointsPerCost')} className={getClassNamesFor('pointsPerCost')}>Points per Cost</th>
+            <th onClick={() => requestSort('goals_scored')} className={getClassNamesFor('goals_scored')}>Goals Scored</th>
+            <th onClick={() => requestSort('assists')} className={getClassNamesFor('assists')}>Assists</th>
+            <th onClick={() => requestSort('clean_sheets')} className={getClassNamesFor('clean_sheets')}>Clean Sheets</th>
+            <th onClick={() => requestSort('goals_conceded')} className={getClassNamesFor('goals_conceded')}>Goals Conceded</th>
+            <th onClick={() => requestSort('bonus')} className={getClassNamesFor('bonus')}>Bonus</th>
+            <th onClick={() => requestSort('selected_by_percent')} className={getClassNamesFor('selected_by_percent')}>Selected %</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sortedPlayers('template4').map(player => (
+            <tr key={player.web_name}>
+              <td>{player.web_name}</td>
+              <td>{player.total_points}</td>
+              <td>{player.now_cost}</td>
+              <td>{player.pointsPerCost}</td>
+              <td>{player.goals_scored}</td>
+              <td>{player.assists}</td>
+              <td>{player.clean_sheets}</td>
+              <td>{player.goals_conceded}</td>
+              <td>{player.bonus}</td>
+              <td>{player.selected_by_percent}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
 
-export default AutobuildTeam;
+export default TeamTemplates;
