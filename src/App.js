@@ -206,12 +206,12 @@ const Tools = () => {
         <tbody>
           {sortedPlayers.map(player => (
             <tr key={player.id}>
-              <td data-label="Name">{player.web_name}</td>
-              <td data-label="Team">{teamMapping[player.team]}</td>
-              <td data-label="Selected by %">{player.selected_by_percent}</td>
-              <td data-label="Points">{player.total_points}</td>
-              <td data-label="Cost">{player.now_cost / 10}</td>
-              <td data-label="Points Per Cost">{(player.total_points / (player.now_cost / 10)).toFixed(2)}</td> {/* New column */}
+              <td>{player.web_name}</td>
+              <td>{teamMapping[player.team]}</td>
+              <td>{player.selected_by_percent}</td>
+              <td>{player.total_points}</td>
+              <td>{player.now_cost / 10}</td>
+              <td>{(player.total_points / (player.now_cost / 10)).toFixed(2)}</td> {/* New column */}
             </tr>
           ))}
         </tbody>
@@ -233,11 +233,11 @@ const Tools = () => {
         <tbody>
           {sortedFixtures.map(fixture => (
             <tr key={fixture.id}>
-              <td data-label="Event">{fixture.event}</td>
-              <td data-label="Home Team">{teamMapping[fixture.team_h]}</td>
-              <td data-label="Away Team">{teamMapping[fixture.team_a]}</td>
-              <td data-label="Home Team FDR">{fixture.team_h_difficulty}</td>
-              <td data-label="Away Team FDR">{fixture.team_a_difficulty}</td>
+              <td>{fixture.event}</td>
+              <td>{teamMapping[fixture.team_h]}</td>
+              <td>{teamMapping[fixture.team_a]}</td>
+              <td>{fixture.team_h_difficulty}</td>
+              <td>{fixture.team_a_difficulty}</td>
             </tr>
           ))}
         </tbody>
