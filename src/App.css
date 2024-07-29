@@ -131,6 +131,24 @@ h2 {
     width: 100%;
   }
 
+  main {
+    padding: 0px;
+    width: 100%; /* Adjusted width for responsiveness */
+    max-width: 1200px;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-top: 0;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
   .Navbar a {
     padding: 10px;
     font-size: 0.9rem;
@@ -140,10 +158,12 @@ h2 {
     font-size: 0.65rem;
     transform: scale(0.75); /* Scale table to fit smaller screens */
     transform-origin: top left; /* Ensure scaling happens from the top left */
+    margin-left: 70px;
   }
 
   th, td {
     padding: 8px;
+    
   }
 }
 /* Add this to your CSS file for teamtemplatesTeam.js */
