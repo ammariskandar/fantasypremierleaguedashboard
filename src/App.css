@@ -19,19 +19,16 @@ body {
 
 /* Header styles */
 .App-header {
-  background-color: #2e093d; 
+  background-color: #2e093d; /* Updated background color */
   color: white;
   padding: 20px;
   width: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
 }
 
-.App-header img {
-  max-height: 60px; 
-  max-width: 100%;
+.App-logo {
+  height: 80px;
+  width: auto;
 }
 
 /* Main section styles */
