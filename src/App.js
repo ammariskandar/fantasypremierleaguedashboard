@@ -161,22 +161,38 @@ const Tools = () => {
     fetchTopPlayers();
   }, []);
 
+  const getPointsPerCost = (player) => {
+    return (player.total_points / (player.now_cost / 10)).toFixed(1);
+  };
+
   const sortedPlayers = [...topPlayers].sort((a, b) => {
-    if (a[sortConfig.key] < b[sortConfig.key]) {
-      return sortConfig.direction === 'ascending' ? -1 : 1;
+    const key = sortConfig.key;
+    const direction = sortConfig.direction === 'ascending' ? 1 : -1;
+
+    if (key === 'pointsPerCost') {
+      const aPointsPerCost = getPointsPerCost(a);
+      const bPointsPerCost = getPointsPerCost(b);
+      return direction * (aPointsPerCost - bPointsPerCost);
+    } else {
+      if (a[key] < b[key]) {
+        return direction * -1;
+      }
+      if (a[key] > b[key]) {
+        return direction * 1;
+      }
+      return 0;
     }
-    if (a[sortConfig.key] > b[sortConfig.key]) {
-      return sortConfig.direction === 'ascending' ? 1 : -1;
-    }
-    return 0;
   });
 
   const sortedFixtures = [...fixtures].sort((a, b) => {
-    if (a[sortConfig.key] < b[sortConfig.key]) {
-      return sortConfig.direction === 'ascending' ? -1 : 1;
+    const key = sortConfig.key;
+    const direction = sortConfig.direction === 'ascending' ? 1 : -1;
+
+    if (a[key] < b[key]) {
+      return direction * -1;
     }
-    if (a[sortConfig.key] > b[sortConfig.key]) {
-      return sortConfig.direction === 'ascending' ? 1 : -1;
+    if (a[key] > b[key]) {
+      return direction * 1;
     }
     return 0;
   });
@@ -200,7 +216,7 @@ const Tools = () => {
             <th onClick={() => handleSort('selected_by_percent')}>Selected By %</th>
             <th onClick={() => handleSort('total_points')}>Points</th>
             <th onClick={() => handleSort('now_cost')}>Cost</th>
-            <th onClick={() => handleSort('pointsPerCost')}>Points per Cost</th> {/* New header */}
+            <th onClick={() => handleSort('pointsPerCost')}>Points per Cost</th>
           </tr>
         </thead>
         <tbody>
@@ -210,8 +226,8 @@ const Tools = () => {
               <td>{teamMapping[player.team]}</td>
               <td>{player.selected_by_percent}</td>
               <td>{player.total_points}</td>
-              <td>{player.now_cost / 10}</td>
-              <td>{(player.total_points / (player.now_cost / 10))}</td> {/* New column */}
+              <td>{(player.now_cost / 10).toFixed(1)}</td>
+              <td>{getPointsPerCost(player)}</td>
             </tr>
           ))}
         </tbody>
