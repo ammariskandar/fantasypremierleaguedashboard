@@ -168,7 +168,7 @@ h2 {
 }
 
 .teamtemplates-table th {
-  background-color: #f4f4f4; /* Light grey background for headers */
+  background-color: #2e093d; /* Light grey background for headers */
   position: sticky;
   top: 0;
   z-index: 1; /* Ensure headers stay on top when scrolling */
