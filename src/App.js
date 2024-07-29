@@ -211,7 +211,7 @@ const Tools = () => {
               <td>{player.selected_by_percent}</td>
               <td>{player.total_points}</td>
               <td>{player.now_cost / 10}</td>
-              <td>{(player.total_points / (player.now_cost / 10)).toFixed(2)}</td> {/* New column */}
+              <td>{(player.total_points / (player.now_cost / 10))}</td> {/* New column */}
             </tr>
           ))}
         </tbody>
