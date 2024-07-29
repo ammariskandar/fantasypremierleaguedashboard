@@ -8,24 +8,24 @@ const TeamTemplates = () => {
   // Player names for each template
   const template1Names = [
     'Haaland', 'Isak', 'Muniz', 'Salah', 'Eze', 'Gordon',
-    'Gibbs-White', 'Winks', 'Mykolenko', 'Munoz', 'Gvardiol',
+    'Gibbs-White', 'Winks', 'Mykolenko', 'Muñoz', 'Gvardiol',
     'Harwood-Bellis', 'Konsa', 'Henderson', 'Turner'
   ];
 
   const template2Names = [
     'Alexander-Arnold', 'Mykolenko', 'Sels', 'Fabianski', 'Gvardiol',
     'Andersen', 'Armstrong', 'Hardwood-Bellis', 'Isak', 'Havertz',
-    'Johnson', 'Foden', 'Gordon', 'Eze', 'Salah'
+    'Brennan', 'Foden', 'Gordon', 'Eze', 'Salah'
   ];
 
   const template3Names = [
     'Alexander-Arnold', 'Mykolenko', 'Sanchez', 'Bentley', 'Gabriel',
-    'Andersen', 'Joao Pedro', 'Hardwood-Bellis', 'Isak', 'Haaland',
-    'Johnson', 'Hudson-Odoi', 'Gordon', 'Eze', 'Saka'
+    'Andersen', 'João Pedro', 'Hardwood-Bellis', 'Isak', 'Haaland',
+    'Brennan', 'Hudson-Odoi', 'Gordon', 'Eze', 'Saka'
   ];
 
   const template4Names = [
-    'Shaw', 'Gvardiol', 'Munoz', 'Turner', 'Verbruggen',
+    'Shaw', 'Gvardiol', 'Muñoz', 'Turner', 'Verbruggen',
     'Konsa', 'Palmer', 'Hardwood-Bellis', 'Isak', 'Watkins',
     'Gibbs-White', 'Fernandes', 'Salah', 'Eze', 'Fraser'
   ];
@@ -38,11 +38,13 @@ const TeamTemplates = () => {
         const allPlayers = response.data.elements;
 
         const getPlayerDetails = (playerNames) => playerNames.map(name => {
-          const player = allPlayers.find(p => 
+          const player = name.toLowerCase() === 'gordon'
+          ? allPlayers.find(p => p.id === 412) // Hardcode ID for Gordon
+          : allPlayers.find(p => 
             p.first_name.toLowerCase() === name.toLowerCase() || 
-            p.second_name.toLowerCase() === name.toLowerCase() ||
+            p.second_name.toLowerCase() === name.toLowerCase() || 
             p.web_name.toLowerCase() === name.toLowerCase()
-          );
+        );
 
           if (player) {
             return {
