@@ -5,7 +5,7 @@ import axios from 'axios';
 function App() {
   const [standings, setStandings] = useState([]);
   const [players, setPlayers] = useState([]);
-  const leagueId = '26320'; // League ID
+  const leagueId = '26320'; // Replace with your actual league ID
 
   useEffect(() => {
     const fetchStandings = async () => {
@@ -51,7 +51,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="/4bb250b1-eb0a-423c-9d0c-2c38519de99b.jpeg" alt="FPL Logo" />
+        <img src="/logo512.png" alt="FPL Champions Logo" className="App-logo" />
       </header>
       <main>
         <section>
