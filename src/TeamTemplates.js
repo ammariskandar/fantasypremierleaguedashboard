@@ -170,7 +170,7 @@ const TeamTemplates = () => {
   };
 
   return (
-    <div>
+    <div className="teamtemplates-table">
       {/* Table 1: Template Name: Haaland + Salah */}
       <h2>Template Name: Haaland + Salah</h2>
       <table>

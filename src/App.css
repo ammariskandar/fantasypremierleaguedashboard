@@ -63,7 +63,7 @@ body {
 /* Main section styles */
 main {
   padding: 20px;
-  width: 90%; /* Adjusted width for responsiveness */
+  width: 100%; /* Adjusted width for responsiveness */
   max-width: 1200px;
   box-sizing: border-box;
 }
@@ -71,14 +71,13 @@ main {
 /* Table styles */
 table {
   width: 100%;
+  max-width: 1000px; /* Limit the max width for better centering */
   border-collapse: collapse;
-  margin-top: 20px;
+  margin: 20px auto; /* Center table horizontally */
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform: scale(1); /* Default scale */
-  transform-origin: top left; /* Scale from the top left */
 }
 
 /* Table header and cell styles */
@@ -139,11 +138,42 @@ h2 {
 
   table {
     font-size: 0.65rem;
-    transform: scale(0.88); /* Scale table to fit smaller screens */
+    transform: scale(0.75); /* Scale table to fit smaller screens */
     transform-origin: top left; /* Ensure scaling happens from the top left */
   }
 
   th, td {
     padding: 8px;
   }
+}
+/* Add this to your CSS file for teamtemplatesTeam.js */
+.teamtemplates-table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto; /* Enables horizontal scrolling on smaller screens */
+  margin-top: -150px;
+  margin-bottom: 20px; /* Add some space between tables */
+  transform: scale(0.85)
+}
+
+.teamtemplates-table table {
+  width: 100%;
+  border-collapse: collapse; /* Make sure borders are collapsed */
+}
+
+.teamtemplates-table th, .teamtemplates-table td {
+  padding: 8px;
+  text-align: left;
+  font-size: 10px; /* Smaller text for better fit */
+}
+
+.teamtemplates-table th {
+  background-color: #f4f4f4; /* Light grey background for headers */
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Ensure headers stay on top when scrolling */
+}
+
+.teamtemplates-table td {
+  border-bottom: 1px solid #ddd; /* Light grey border between rows */
 }
