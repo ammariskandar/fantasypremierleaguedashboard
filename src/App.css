@@ -126,14 +126,14 @@ th {
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   table {
-    width: 45%;
+    width: 30%;
     border-collapse: collapse;
     margin-top: 15px;
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 0.8rem
+    font-size: 0.6rem
   }
   
   th, td {
