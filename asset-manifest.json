@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/fantasypremierleaguedashboard/static/css/main.d25799a8.css",
+    "main.css": "/fantasypremierleaguedashboard/static/css/main.73bedc5a.css",
     "main.js": "/fantasypremierleaguedashboard/static/js/main.bb3ba92b.js",
     "static/js/453.55445cc4.chunk.js": "/fantasypremierleaguedashboard/static/js/453.55445cc4.chunk.js",
     "index.html": "/fantasypremierleaguedashboard/index.html",
-    "main.d25799a8.css.map": "/fantasypremierleaguedashboard/static/css/main.d25799a8.css.map",
+    "main.73bedc5a.css.map": "/fantasypremierleaguedashboard/static/css/main.73bedc5a.css.map",
     "main.bb3ba92b.js.map": "/fantasypremierleaguedashboard/static/js/main.bb3ba92b.js.map",
     "453.55445cc4.chunk.js.map": "/fantasypremierleaguedashboard/static/js/453.55445cc4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d25799a8.css",
+    "static/css/main.73bedc5a.css",
     "static/js/main.bb3ba92b.js"
   ]
 }
