@@ -1,0 +1,29 @@
+.toast {
+    position: fixed;
+    top: 10px;
+    left: 10px; /* Aligns toast to the left */
+    background-color: #333;
+    color: white;
+    padding: 10px 15px; /* Adjust padding for smaller height */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem; /* Slightly smaller text */
+  }
+  
+  .toast a {
+    color: #f5c6c6;
+    text-decoration: underline;
+  }
+  
+  .toast-dismiss {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem; /* Adjusted size for visibility */
+    cursor: pointer;
+    margin-left: 15px; /* Space between text and dismiss button */
+  }
+  
