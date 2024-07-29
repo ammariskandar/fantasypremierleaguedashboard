@@ -14,11 +14,8 @@ const Home = () => {
     const fetchStandings = async () => {
       const options = {
         method: 'GET',
-        url: `https://fantasy-premier-league-fpl-api.p.rapidapi.com/api/leagues-classic/${leagueId}/standings/`,
-        headers: {
-          'x-rapidapi-key': '0afa755117mshf85581579eb30c6p15ec1ejsn6368a0b6abc4',
-          'x-rapidapi-host': 'fantasy-premier-league-fpl-api.p.rapidapi.com',
-        },
+        url: `https://corsproxy.io/?https://fantasy.premierleague.com/api/leagues-classic/${leagueId}/standings/`,
+        headers: {},
       };
 
       try {
@@ -32,11 +29,8 @@ const Home = () => {
     const fetchRegisteredPlayers = async () => {
       const options = {
         method: 'GET',
-        url: `https://fantasy-premier-league-fpl-api.p.rapidapi.com/api/leagues-classic/${leagueId}/standings/`,
-        headers: {
-          'x-rapidapi-key': '0afa755117mshf85581579eb30c6p15ec1ejsn6368a0b6abc4',
-          'x-rapidapi-host': 'fantasy-premier-league-fpl-api.p.rapidapi.com',
-        },
+        url: `https://corsproxy.io/?https://fantasy.premierleague.com/api/leagues-classic/${leagueId}/standings/`,
+        headers: {},
       };
 
       try {
@@ -139,11 +133,8 @@ const Tools = () => {
   React.useEffect(() => {
     const fetchFixtures = async () => {
       try {
-        const fixturesResponse = await axios.get('https://fantasy-premier-league-fpl-api.p.rapidapi.com/api/fixtures/', {
-          headers: {
-            'x-rapidapi-key': '0afa755117mshf85581579eb30c6p15ec1ejsn6368a0b6abc4',
-            'x-rapidapi-host': 'fantasy-premier-league-fpl-api.p.rapidapi.com',
-          },
+        const fixturesResponse = await axios.get('https://corsproxy.io/?https://fantasy.premierleague.com/api/fixtures/', {
+          headers: {},
         });
         setFixtures(fixturesResponse.data);
       } catch (error) {
@@ -153,11 +144,8 @@ const Tools = () => {
 
     const fetchTopPlayers = async () => {
       try {
-        const playersResponse = await axios.get('https://fantasy-premier-league-fpl-api.p.rapidapi.com/api/bootstrap-static/', {
-          headers: {
-            'x-rapidapi-key': '0afa755117mshf85581579eb30c6p15ec1ejsn6368a0b6abc4',
-            'x-rapidapi-host': 'fantasy-premier-league-fpl-api.p.rapidapi.com',
-          },
+        const playersResponse = await axios.get('https://corsproxy.io/?https://fantasy.premierleague.com/api/bootstrap-static/', {
+          headers: {},
         });
         const players = playersResponse.data.elements;
         const topPlayers = players
@@ -260,24 +248,26 @@ const Tools = () => {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/fantasypremierleaguedashboard">
       <div className="App">
         <header className="App-header">
-          <img src={process.env.PUBLIC_URL + '/logo512.png'} alt="FPL Champions Logo" className="App-logo" />
+        <img src={process.env.PUBLIC_URL + '/logo512.png'} alt="FPL Champions Logo" className="App-logo" />
+          <h1>FPL Champions</h1>
         </header>
         <nav className="Navbar">
           <Link to="/">Home</Link>
           <Link to="/tools">Tools</Link>
         </nav>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/tools" element={<Tools />} />
-          <Route path="*" element={<Navigate to="/" />} /> {/* Redirects to Home for any other path */}
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/tools" element={<Tools />} />
+          </Routes>
+        </main>
         <footer className="Footer">
           Developed by Ammar Iskandar using React
         </footer>
-        <Toast /> {/* Display the toast message */}
+        <Toast />
       </div>
     </Router>
   );
