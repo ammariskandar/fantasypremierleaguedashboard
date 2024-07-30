@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
 import './App.css';
-import Toast from './Toast'; // Import the Toast component
+import Toast from './Toast'; 
 import TeamTemplates from './TeamTemplates';
 import axios from 'axios';
 
-const leagueId = '26320'; // Replace with your actual league ID
+const leagueId = '26320'; // League ID
 
 const Home = () => {
   const [standings, setStandings] = React.useState([]);
@@ -36,7 +36,7 @@ const Home = () => {
 
       try {
         const response = await axios.request(options);
-        setPlayers(response.data.new_entries.results); // Set the registered players
+        setPlayers(response.data.new_entries.results); 
       } catch (error) {
         console.error('Error fetching registered players:', error);
       }
@@ -234,7 +234,7 @@ const Tools = () => {
         </tbody>
       </table>
 
-      <div style={{ margin: '40px 0' }} /> {/* Gap between sections */}
+      <div style={{ margin: '40px 0' }} /> 
 
       <h2>Fixture Tracker</h2>
       <table>

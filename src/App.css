@@ -1,15 +1,15 @@
-/* Base styles */
+
 body {
   font-family: 'Lato', sans-serif;
   background-color: #f5f5f5;
   color: #333;
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensures padding and border are included in element width and height */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box; 
+  overflow-x: hidden; 
 }
 
-/* Centered container */
+
 .App {
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@ body {
 
 /* Header styles */
 .App-header {
-  background-color: #2e093d; /* Updated background color */
+  background-color: #2e093d; 
   color: white;
   padding: 20px;
   width: 100%;
@@ -30,20 +30,20 @@ body {
 
 /* Logo styles */
 .App-logo {
-  height: auto; /* Maintain aspect ratio */
-  max-height: 160px; /* Adjust logo size */
+  height: auto; 
+  max-height: 160px; 
 }
 
 /* Navigation styles */
 .Navbar {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  flex-wrap: wrap; 
   justify-content: center;
   background-color: #f0f0f0;
   padding: 10px;
   width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px; /* Space below navigation */
+  margin-bottom: 20px; 
 }
 
 .Navbar a {
@@ -52,7 +52,7 @@ body {
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 4px; 
   margin: 0 5px;
 }
 
@@ -63,7 +63,7 @@ body {
 /* Main section styles */
 main {
   padding: 20px;
-  width: 100%; /* Adjusted width for responsiveness */
+  width: 100%; 
   max-width: 1200px;
   box-sizing: border-box;
 }
@@ -71,25 +71,24 @@ main {
 /* Table styles */
 table {
   width: 100%;
-  max-width: 1000px; /* Limit the max width for better centering */
+  max-width: 1000px; 
   border-collapse: collapse;
-  margin: 20px auto; /* Center table horizontally */
+  margin: 20px auto; 
   background: #fff;
   border-radius: 8px;
   overflow: auto;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Table header and cell styles */
 th, td {
   padding: 12px;
   text-align: left;
-  word-wrap: break-word; /* Ensure text wraps within table cells */
+  word-wrap: break-word; 
 }
 
 th {
-  background-color: #2e093d; /* Header background color */
-  color: white; /* Header text color */
+  background-color: #2e093d; 
+  color: white; 
   font-weight: bold;
 }
 
@@ -101,7 +100,6 @@ tr:hover {
   background-color: #e9ecef;
 }
 
-/* Headings and text */
 h1 {
   font-size: 2.5rem;
   margin: 0;
@@ -113,7 +111,6 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* Footer styles */
 .Footer {
   margin-top: auto;
   padding: 10px;
@@ -133,7 +130,7 @@ h2 {
 
   main {
     padding: 0px;
-    width: 100%; /* Adjusted width for responsiveness */
+    width: 100%; 
     max-width: 1200px;
     box-sizing: border-box;
   }
@@ -156,8 +153,8 @@ h2 {
 
   table {
     font-size: 0.65rem;
-    transform: scale(0.75); /* Scale table to fit smaller screens */
-    transform-origin: top left; /* Ensure scaling happens from the top left */
+    transform: scale(0.75); /* Scale table to fit smaller screens i.e. mobile */
+    transform-origin: top left;
     margin-left: 70px;
   }
 
@@ -166,34 +163,34 @@ h2 {
     
   }
 }
-/* Add this to your CSS file for teamtemplatesTeam.js */
+
 .teamtemplates-table {
   width: 100%;
   max-width: 100%;
   overflow-x: auto; /* Enables horizontal scrolling on smaller screens */
   margin-top: -150px;
-  margin-bottom: 20px; /* Add some space between tables */
+  margin-bottom: 20px; 
   transform: scale(0.85)
 }
 
 .teamtemplates-table table {
   width: 100%;
-  border-collapse: collapse; /* Make sure borders are collapsed */
+  border-collapse: collapse; 
 }
 
 .teamtemplates-table th, .teamtemplates-table td {
   padding: 8px;
   text-align: left;
-  font-size: 10px; /* Smaller text for better fit */
+  font-size: 10px; 
 }
 
 .teamtemplates-table th {
-  background-color: #2e093d; /* Light grey background for headers */
+  background-color: #2e093d; 
   position: sticky;
   top: 0;
-  z-index: 1; /* Ensure headers stay on top when scrolling */
+  z-index: 1; 
 }
 
 .teamtemplates-table td {
-  border-bottom: 1px solid #ddd; /* Light grey border between rows */
+  border-bottom: 1px solid #ddd;
 }
